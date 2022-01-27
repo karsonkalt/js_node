@@ -49,9 +49,10 @@ HTTP - Hyper Text Transfer Protocol, with SSL encrypted turned on.
 
 ## Event Loop
 - Started by node.js, keeps node JS running and handles all the callbacks.
+- A node program ends when there is no more work to do
 
 > Note: I/O Means Input/Output, like disk and network operations.
 
 ## We can export in two ways
 - `module.exports` which we can use
-- 
+- Exports should be read-only, consider them locked once they export that you can't edit parts of them.

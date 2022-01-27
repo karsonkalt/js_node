@@ -43,3 +43,5 @@ function requestHandler(req, res) {
 }
 
 module.exports = requestHandler;
+// Export can be an object or any data type.
+// I can assign those properties by changeing exports.handler or exports.text
