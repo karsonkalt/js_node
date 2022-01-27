@@ -36,3 +36,22 @@ HTTP - Hyper Text Transfer Protocol, with SSL encrypted turned on.
 - A steam is an incoming request coming in in multiple parts, at some point, it is done and fully parsed.
 - But if it was a file, stream might make sense becasuse you want to be able to work with it as half-written.
 - We use a buffer like a bus stop. The buses are always moving. We can hold multiple chunks in them.
+
+## Async
+- Lots of what is happening depends on event listeners which can happen out of order.
+- Node has a lot of async features.
+- Node handles event listeners just like the
+
+## Write File (Workers)
+- We have async and sync, `.writeFileSync` is executed synchonously and will block until it finishes.
+- `.writeFile` is async and will happen in the background.
+- If we are interacting with a file, we should do something async becuase generally it takes a longer time.
+
+## Event Loop
+- Started by node.js, keeps node JS running and handles all the callbacks.
+
+> Note: I/O Means Input/Output, like disk and network operations.
+
+## We can export in two ways
+- `module.exports` which we can use
+- 
