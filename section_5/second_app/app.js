@@ -1,5 +1,6 @@
 // const http = require("http");
 const path = require("path");
+const rootDir = require("./util/path");
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
@@ -10,6 +11,7 @@ const shop = require("./routes/shop");
 // Parsing middleware before other middlewares
 // It will handle string parsing for us, but not JSON
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/admin", products);
 app.use(shop);
