@@ -1,4 +1,5 @@
 // const http = require("http");
+const path = require("path");
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
@@ -13,14 +14,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use("/admin", products);
 app.use(shop);
 
-app.get("/", (req, resp, next) => {
-  resp.send("<h1>Homepage</h1>");
-});
-
 app.use((req, resp, next) => {
   // Will be executed on every request if it was first
   resp.status(404);
-  resp.send("<h1>404. Page not Found</h1>");
+  resp.sendFile(path.join(__dirname, "views", "404.html"));
 });
 
 // const server = http.createServer(app);

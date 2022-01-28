@@ -25,3 +25,5 @@
 
 ## Nested Routes
 - Can take segment out and then pass a path where importing the routes.
+
+# Send a file instead of HTML text
